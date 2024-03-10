@@ -102,6 +102,10 @@ struct ContentView: View {
                 emptyBlock1[index] = letter
             }
             updateEmptyBlock2()
+            if !emptyBlock1.contains("_") {
+                // If there are no more underscores in the guessed word, all letters have been guessed correctly
+                startNewGame() // Restart the game automatically
+            }
         }
         // Add logic for handling incorrect guesses here
     }
